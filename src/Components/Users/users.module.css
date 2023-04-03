@@ -3,3 +3,10 @@
     width: 1000px;
     padding: 10px;
 }
+.activePage{
+    font-weight: bold;
+}
+.avatar{
+    width: 80px;
+    border-radius: 60px;
+}

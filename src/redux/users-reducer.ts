@@ -3,6 +3,8 @@ import {ActionType} from "./ActionType";
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET-USERS'
+const SET_CURRENT_PAGE = 'SET-CURRENT-PAGE'
+const SET_TOTAL_USER_COUNT = 'SET-USER-TOTAL-COUNT'
 
 export type userType = {
     id: number
@@ -16,9 +18,15 @@ export type userType = {
 }
 export type initialStateUsersType = {
     users: userType[]
+    pageSize : number
+    totalUsersCount: number
+    currentPage: number
 }
 const initialState: initialStateUsersType = {
-    users: []
+    users: [],
+    pageSize : 5,
+    totalUsersCount: 0,
+    currentPage:1
 }
 
 // type FollowType = {
@@ -45,7 +53,13 @@ export const usersReducer = (state: initialStateUsersType = initialState, action
             return {...state, users: [...state.users.map(u => u.id === action.userId ? {...u, followed: false} : u)]}
         }
         case SET_USERS: {
-            return {...state, users: [...state.users, ...action.users]}
+            return {...state, users: action.users}
+        }
+        case SET_CURRENT_PAGE:{
+            return {...state, currentPage: action.page}
+        }
+        case SET_TOTAL_USER_COUNT:{
+            return {...state, totalUsersCount: action.totalCount}
         }
         default:
             return state
@@ -79,93 +93,20 @@ export const SetUsersAC = (users: userType[]) => {
     } as const
 }
 
-// export type InitialStateType = {
-//     users: UsersType[]
-// }
-//
-// export type UsersType = {
-//     id: number,
-//     photoUrl: string,
-//     photos:{ small: string, large: string}
-//     followed: boolean,
-//     name: string,
-//     status: string,
-//     // location: LocationType
-// }
-//
-// type LocationType = {
-//     city: string,
-//     counry: string
-// }
-//
-// let initialState: InitialStateType = {
-//     users: []
-// }
-//
-// export const usersReducer = (state = initialState, action: MainUsersType) => {
-//     switch (action.type) {
-//         case "FOLLOW": {
-//             return {...state, users: state.users.map(el => el.id === action.userId ? {...el, followed: true} : el)}
-//
-//         }
-//         case "UN_FOLLOW": {
-//             return {...state, users: state.users.map(el => el.id === action.userId ? {...el, followed: false} : el)}
-//         }
-//         case "SET_USERS": {
-//             return {...state, users: [...state.users, ...action.users]}
-//         }
-//         default:
-//             return state
-//     }
-// }
-//
-// type MainUsersType = FollowACType | UnFollowACType | setUsersACType
-//
-// type FollowACType = ReturnType<typeof followAC>
-// export const followAC = (userId: number) => {
-//     return {
-//         type: "FOLLOW",
-//         userId
-//     } as const
-// }
-//
-// type UnFollowACType = ReturnType<typeof UnfollowAC>
-// export const UnfollowAC = (userId: number) => {
-//     return {
-//         type: "UN_FOLLOW",
-//         userId
-//     } as const
-// }
-//
-// type setUsersACType = ReturnType<typeof setUsersAC>
-// export const setUsersAC = (users: UsersType[]) => {
-//     return {
-//         type: "SET_USERS",
-//         users
-//     } as const
-// }
 
-// case FOLLOW: {
-//     let partOfStateCopy = {
-//         ...partOfState,
-//         users: partOfState.users.map(user => {
-//             if (user.id === action.userId) {
-//                 return {...user, followed: true}
-//             }
-//             return user;
-//         })
-//     };
-//     return partOfStateCopy;
-// }
-// case UNFOLLOW: {
-//     let partOfStateCopy = {
-//         ...partOfState,
-//         users: partOfState.users.map(user => {
-//             if (user.id === action.userId) {
-//                 return {...user, followed: false}
-//             }
-//             return user;
-//         })
-//     };
-//     return partOfStateCopy;
-// }
+export type SetCurrentPageACType= ReturnType<typeof SetCurrentPageAC>
+export const SetCurrentPageAC = (page:number)=>{
+    return{
+        type: 'SET-CURRENT-PAGE',
+        page
+    }as const
+}
+
+
+export type setUserTotalCountACType = ReturnType<typeof setUserTotalCountAC>
+ export const setUserTotalCountAC =(totalCount:number)=>{
+    return{
+        type:'SET-USER-TOTAL-COUNT',
+        totalCount
+    } as const
+ }

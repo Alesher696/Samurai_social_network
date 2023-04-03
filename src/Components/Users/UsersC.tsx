@@ -1,25 +1,42 @@
 import React from 'react';
-import u from "./users.module.css";
+import users from "./users.module.css";
 import axios from "axios";
 import {UsersPropsType} from "./usersContainer";
+import avatar from '../../avatar.jpg'
 
 export class UsersC extends React.Component <UsersPropsType, {}>{
 
-    constructor(props:UsersPropsType){
-        super(props);
-            axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
-                this.props.setUsers(response.data.items)
-            })
-        }
+    componentDidMount() {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
+            this.props.setUsers(response.data.items)
+            this.props.setTotalUserCount(response.data.totalCount)
+        })
+    }
 
 
     render() {
+
+        const pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize)
+        const pages = []
+        for (let i=1; i<= pagesCount; i++){
+            pages.push(i)
+        }
+
+const onClickPageHandler =(page:number)=>{
+    this.props.setCurrentPage(page)
+    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page}&count=${this.props.pageSize}`).then(response => {
+        this.props.setUsers(response.data.items)
+    })
+}
         return (
-            <div className={u.usersContainer}>
+
+            <div className={users.usersContainer}>
+                {pages.map(el=> {return <span className={ el === this.props.currentPage ? users.activePage : ''} onClick={()=>onClickPageHandler(el)}>{el}</span>})}
+
                 {
                     this.props.usersPage.map(u => (
                         <div key={u.id}>
-                            <div><img/></div>
+                            <div><img className={users.avatar} src={avatar}/></div>
                             <span>{u.name}</span>
                             <div>
                                 {u.followed
