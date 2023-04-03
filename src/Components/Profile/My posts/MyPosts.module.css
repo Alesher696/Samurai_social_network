@@ -1,0 +1,63 @@
+.myPostsBlock {
+    padding: 10px;
+    text-align: center;
+
+}
+
+.postsList {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.plus {
+    background-image: url('ikonka-plyus-1-PhotoRoom.png-PhotoRoom.png');
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: 50px 50px;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    margin-inline: 2px;
+    background-color: rgba(255, 255, 255, 0);
+
+
+}
+
+.textArea {
+    text-align: center;
+    width: 800px;
+    height: 50px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid rgb(162, 162, 162);
+    border-radius: 4px;
+    background-color: #9f9f9f;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+    color: #ffffff;
+    overflow: auto;
+}
+
+.addPost {
+    width: 1000px;
+    border-radius: 5px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:  rgba(185, 185, 185, 0.22);
+    box-shadow: 0 0 7px rgba(0,0,0,0.5)
+
+}
+.avatar{
+    width: 80px;
+    border-radius: 60px;
+}

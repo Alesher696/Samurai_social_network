@@ -1,0 +1,17 @@
+.post img {
+    width: 80px;
+    border-radius: 60px;
+}
+.postText{
+    font-size: 20px;
+    overflow-x:hidden;
+}
+.post{
+    width: 200px;
+    height: max-content;
+    padding-top: 20px;
+    background-color:  rgba(185, 185, 185, 0.22);
+    box-shadow: 0 0 7px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    margin-top: 20px;
+}
