@@ -1,0 +1,72 @@
+.navPanel {
+    width: 350px;
+    background-color: #1C1E26;
+    height: 100vh;
+    position: fixed;
+    -webkit-box-shadow: 22px 2px 12px -16px rgba(63, 63, 63, 0.76);
+    -moz-box-shadow: 22px 2px 12px -16px rgba(63, 63, 63, 0.76);
+    box-shadow: 22px 2px 12px -16px rgba(63, 63, 63, 0.53);
+    color: white;
+    display: flex;
+    padding-top: 30px;
+}
+
+.navLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: baseline;
+
+}
+
+.icons {
+    width: 20px;
+    height: 20px;
+}
+
+.btnLink {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 10px;
+    padding-inline: 10px;
+    margin-inline: 20px;
+    width: 115px;
+    height: 36px;
+}
+
+
+
+.btn {
+    margin-inline: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    width: auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.btnLink:hover{
+    background-color: #3D50FA;
+    width: 130px;
+    height: 36px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 1px 19px 4px #3D50FA;
+    -moz-box-shadow: 0px 1px 19px 4px #3D50FA;
+    box-shadow: 0px 1px 19px 4px #3D50FA;
+    transition: 0.2s;
+
+}
+
+.spanText{
+    margin-left: 8px;
+}
+
+.space{
+    margin-inline: 40px;
+    margin-top: 40px;
+}
+

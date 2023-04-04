@@ -1,62 +1,4 @@
 import React from 'react';
-import users from "./users.module.css";
-import axios from "axios";
-import {UsersPropsType} from "./usersContainer";
-import avatar from '../../avatar.jpg'
-
-export class UsersC extends React.Component <UsersPropsType, {}>{
-
-    componentDidMount() {
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
-            this.props.setUsers(response.data.items)
-            this.props.setTotalUserCount(response.data.totalCount)
-        })
-    }
-
-
-    render() {
-
-        const pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize)
-        const pages = []
-        for (let i=1; i<= pagesCount; i++){
-            pages.push(i)
-        }
-
-const onClickPageHandler =(page:number)=>{
-    this.props.setCurrentPage(page)
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page}&count=${this.props.pageSize}`).then(response => {
-        this.props.setUsers(response.data.items)
-    })
-}
-        return (
-
-            <div className={users.usersContainer}>
-                {pages.map(el=> {return <span className={ el === this.props.currentPage ? users.activePage : ''} onClick={()=>onClickPageHandler(el)}>{el}</span>})}
-
-                {
-                    this.props.usersPage.map(u => (
-                        <div key={u.id}>
-                            <div><img className={users.avatar} src={avatar}/></div>
-                            <span>{u.name}</span>
-                            <div>
-                                {u.followed
-                                    ? <button onClick={() => this.props.unfollow(u.id)}>UnFollow</button>
-                                    : <button onClick={() => this.props.follow(u.id)}>Follow</button>}
-                            </div>
-                            <span>{u.status}</span>
-                            <div>
-                                <span>{'u.location.country'}</span>
-                                <br/>
-                                <span>{'u.location.city'}</span>
-                            </div>
-                        </div>))
-                }
-            </div>)
-    }
-
-
-}
-
 
 // import React from 'react';
 // import {UsersType} from "../../redux/users-reducer";
@@ -76,8 +18,8 @@ const onClickPageHandler =(page:number)=>{
 // export class Users extends React.Component<PropsType> {
 //     constructor(props: PropsType) {
 //         super(props);
-//         axios.get('https://social-network.samuraijs.com/api/1.0/users').then((responce) =>
-//             this.props.setUsersHandler(responce.data.items)
+//         axios.get('https://social-network.samuraijs.com/api/1.0/users').then((response) =>
+//             this.props.setUsersHandler(response.data.items)
 //         )
 //     }
 //
@@ -103,7 +45,7 @@ const onClickPageHandler =(page:number)=>{
 //                                     <div>{el.name}</div>
 //                                     <div>{el.status}</div>
 //                                     {/*<div>{el.location.city}</div>*/}
-//                                     {/*<div>{el.location.counry}</div>*/}
+//                                     {/*<div>{el.location.country}</div>*/}
 //                                 </DivForMargin>
 //                             </RightSide>
 //

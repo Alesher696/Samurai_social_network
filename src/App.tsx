@@ -9,25 +9,19 @@ import {SubFooter} from "./Components/Footer/SubFooter";
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import {DialogsContainer} from "./Components/Dialogs/dialogsContainer";
 import {UsersContainer} from "./Components/Users/usersContainer";
+import {Nav} from "./Components/Nav/Nav";
 
 
-
-
-
-
-type AppPropsType = {
-
-}
+type AppPropsType = {}
 
 const App: React.FC<AppPropsType> = (props) => {
-
-
 
 
     return (
         <BrowserRouter>
             <div className="App">
                 <Header/>
+                <Nav/>
                 <div className='App-wrapper-content'>
 
                     <Routes>

@@ -10,3 +10,9 @@
     width: 80px;
     border-radius: 60px;
 }
+.pages{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

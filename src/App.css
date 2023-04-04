@@ -7,8 +7,7 @@ body{
 
 }
 .App {
-    /*background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40.17%, rgba(0, 0, 0, 0.83) 94.79%) #f3f3f3 fixed;*/
-    background-image: url('./font.jpg');
+    background-color: #20222c;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -19,3 +18,4 @@ body{
     margin: 0 auto;
     max-height: max-content;
 }
+

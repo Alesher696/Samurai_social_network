@@ -4,7 +4,7 @@ import {
     FollowACType,
     SetCurrentPageACType,
     SetUsersACType,
-    setUserTotalCountACType,
+    setUserTotalCountACType, ShowLoaderACType,
     UnFollowACType
 } from "./users-reducer";
 // import {FollowACType, SetUsersACType, UnFollowACType} from "./users-reducer";
@@ -18,4 +18,5 @@ export type ActionType =
     UnFollowACType |
     SetUsersACType |
     SetCurrentPageACType |
-    setUserTotalCountACType
+    setUserTotalCountACType |
+    ShowLoaderACType

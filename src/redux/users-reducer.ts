@@ -5,6 +5,8 @@ const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET-USERS'
 const SET_CURRENT_PAGE = 'SET-CURRENT-PAGE'
 const SET_TOTAL_USER_COUNT = 'SET-USER-TOTAL-COUNT'
+const SHOW_LOADER = 'SHOW-LOADER'
+
 
 export type userType = {
     id: number
@@ -18,15 +20,17 @@ export type userType = {
 }
 export type initialStateUsersType = {
     users: userType[]
-    pageSize : number
+    pageSize: number
     totalUsersCount: number
     currentPage: number
+    isFetching: boolean
 }
 const initialState: initialStateUsersType = {
     users: [],
-    pageSize : 5,
+    pageSize: 5,
     totalUsersCount: 0,
-    currentPage:1
+    currentPage: 1,
+    isFetching: true
 }
 
 // type FollowType = {
@@ -43,7 +47,6 @@ const initialState: initialStateUsersType = {
 // }
 
 
-
 export const usersReducer = (state: initialStateUsersType = initialState, action: ActionType): initialStateUsersType => {
     switch (action.type) {
         case FOLLOW: {
@@ -55,11 +58,14 @@ export const usersReducer = (state: initialStateUsersType = initialState, action
         case SET_USERS: {
             return {...state, users: action.users}
         }
-        case SET_CURRENT_PAGE:{
+        case SET_CURRENT_PAGE: {
             return {...state, currentPage: action.page}
         }
-        case SET_TOTAL_USER_COUNT:{
+        case SET_TOTAL_USER_COUNT: {
             return {...state, totalUsersCount: action.totalCount}
+        }
+        case SHOW_LOADER: {
+            return {...state, isFetching: action.isFetching}
         }
         default:
             return state
@@ -94,19 +100,28 @@ export const SetUsersAC = (users: userType[]) => {
 }
 
 
-export type SetCurrentPageACType= ReturnType<typeof SetCurrentPageAC>
-export const SetCurrentPageAC = (page:number)=>{
-    return{
+export type SetCurrentPageACType = ReturnType<typeof SetCurrentPageAC>
+export const SetCurrentPageAC = (page: number) => {
+    return {
         type: 'SET-CURRENT-PAGE',
         page
-    }as const
+    } as const
 }
 
 
 export type setUserTotalCountACType = ReturnType<typeof setUserTotalCountAC>
- export const setUserTotalCountAC =(totalCount:number)=>{
-    return{
-        type:'SET-USER-TOTAL-COUNT',
+export const setUserTotalCountAC = (totalCount: number) => {
+    return {
+        type: 'SET-USER-TOTAL-COUNT',
         totalCount
     } as const
- }
+}
+
+export type ShowLoaderACType = ReturnType<typeof ShowLoaderAC>
+
+export const ShowLoaderAC = (isFetching: boolean) => {
+    return {
+        type: 'SHOW-LOADER',
+        isFetching
+    } as const
+}
