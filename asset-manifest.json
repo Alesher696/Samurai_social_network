@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c4628a7e.css",
+    "main.js": "/static/js/main.3219bc19.js",
+    "static/media/ikonka-plyus-1-PhotoRoom.png-PhotoRoom.png": "/static/media/ikonka-plyus-1-PhotoRoom.png-PhotoRoom.0e753d9cff7da32f81ed.png",
+    "static/media/wuH.png": "/static/media/wuH.a217a38469ed66c81cb0.png",
+    "static/media/tlH.png": "/static/media/tlH.e00874ced1a93bceb660.png",
+    "static/media/fbH.png": "/static/media/fbH.f1d8d1e7962f39df19da.png",
+    "static/media/vkH.png": "/static/media/vkH.0d2d819501a64828b899.png",
+    "static/media/ytH.png": "/static/media/ytH.9030e47671b0703f3db1.png",
+    "static/media/wu.png": "/static/media/wu.e4dbb3efc4b59006206c.png",
+    "static/media/tl.png": "/static/media/tl.1b10e322db2abb437b8d.png",
+    "static/media/vk.png": "/static/media/vk.7603f231edc3debcd3f2.png",
+    "static/media/yt.png": "/static/media/yt.023fa7c90329ce3ddf55.png",
+    "static/media/fb.png": "/static/media/fb.9a6e212e214e7aef33e5.png",
+    "static/media/tail-spin.svg": "/static/media/tail-spin.86194a552d45044eea10396f20518cab.svg",
+    "index.html": "/index.html",
+    "main.c4628a7e.css.map": "/static/css/main.c4628a7e.css.map",
+    "main.3219bc19.js.map": "/static/js/main.3219bc19.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c4628a7e.css",
+    "static/js/main.3219bc19.js"
+  ]
+}
