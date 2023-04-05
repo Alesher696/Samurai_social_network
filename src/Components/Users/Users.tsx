@@ -11,7 +11,7 @@ type UsersPropsType = {
     onClickPageHandler: (page: number) => void
     unfollow: (userId: number) => void
     follow: (userId: number) => void
-    usersPage: userType[]
+    users: userType[]
     isFetching: boolean
     showLoader: (isFetching: boolean) => void
 }
@@ -35,7 +35,7 @@ export const Users = (props: UsersPropsType) => {
                 })}
             </div>
             {
-                props.usersPage.map((u: userType) => (
+                props.users.map((u: userType) => (
                     <div key={u.id}>
                         <div><img className={users.avatar} src={avatar} alt={'avatar'}/></div>
                         <span>{u.name}</span>

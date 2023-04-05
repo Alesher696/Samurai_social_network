@@ -9,7 +9,6 @@
     display: flex;
 }
 .avatar {
-    background-image: url("../../../avatar.jpg");
     background-size: 150px 150px;
     background-repeat: no-repeat;
     background-position: center;

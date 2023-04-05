@@ -1,5 +1,5 @@
 import {SendMessageACType, UpdateNewMessageBodyACType} from "./dialogs-reducer";
-import {addPostACType, updateNewPostTextACType} from "./profile-reducer";
+import {addPostACType, setUserProfileType, updateNewPostTextACType} from "./profile-reducer";
 import {
     FollowACType,
     SetCurrentPageACType,
@@ -19,4 +19,5 @@ export type ActionType =
     SetUsersACType |
     SetCurrentPageACType |
     setUserTotalCountACType |
-    ShowLoaderACType
+    ShowLoaderACType |
+    setUserProfileType

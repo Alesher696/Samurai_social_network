@@ -1,16 +1,41 @@
 import {ActionType} from "./ActionType"
 
 
-
 export type PostsPropsType = {
     id: number
     data: string
     like: number
 }
 
+
+export type ContactsType = {
+    github: string
+    vk: string
+    facebook: string
+    instagram: string
+    twitter: string
+    website: null | string
+    youtube: null | string
+    mainLink: null | string
+}
+
+export type ProfileType = null | {
+        aboutMe: string
+        userId: number
+        lookingForAJob: boolean
+        lookingForAJobDescription: string
+        fullName: string
+        contacts: ContactsType
+        photos: {
+            large: string
+            small: string
+    }
+}
+
 export type InitialStateType = {
-        posts: PostsPropsType[]
-        newPostText: string
+    posts: PostsPropsType[]
+    newPostText: string
+    profile: ProfileType | null
 
 }
 
@@ -21,6 +46,8 @@ const initialState: InitialStateType = {
         {id: 3, data: "What's up guys?", like: 2},
     ],
     newPostText: 'Что у вас нового?',
+    profile : null
+
 }
 
 export const profileReducer = (state: InitialStateType = initialState, action: ActionType): InitialStateType => {
@@ -34,6 +61,9 @@ export const profileReducer = (state: InitialStateType = initialState, action: A
 
         case "UPDATE-NEW-POST-TEXT": {
             return {...state, newPostText: action.text}
+        }
+        case "SET-USER-PROFILE": {
+            return {...state, profile : action.profile}
         }
         default:
             return state
@@ -59,4 +89,12 @@ export const updateNewPostTextAC = (text: string): updateNewPostTextACType => ({
     } as const
 )
 
+
+export type setUserProfileType = ReturnType<typeof setUserProfileAC>
+export const setUserProfileAC = (profile: ProfileType) => {
+    return {
+        type: 'SET-USER-PROFILE',
+        profile
+    } as const
+}
 

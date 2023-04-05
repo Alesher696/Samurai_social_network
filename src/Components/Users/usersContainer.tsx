@@ -70,7 +70,7 @@ export class UsersAPIComponent extends React.Component <UsersPropsType, {}> {
                                                                        onClickPageHandler={this.onClickPageHandler}
                                                                        unfollow={this.props.unfollow}
                                                                        follow={this.props.follow}
-                                                                       usersPage={this.props.usersPage}
+                                                                       users={this.props.usersPage}
                                                                        isFetching={this.props.isFetching}
                                                                        showLoader={this.props.showLoader}
                 />}
