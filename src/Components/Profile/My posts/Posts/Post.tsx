@@ -12,13 +12,17 @@ type PostPropsType = {
 export const Post = (props:PostPropsType) => {
     return (
         <div className={p.post}>
-            <img src={avatar}/>
+
+            <div className={p.avatarAndLikes}> <img src={avatar}/> likes: {props.likes}</div>
             <div className={p.postText}>
                 {props.value}
             </div>
-            <button>like</button>
-            <button>editor</button>
-            <div>likes: {props.likes}</div>
+            <div className={p.buttons}>
+                <button className={p.btn}>like</button>
+                <button className={p.btn}>editor</button>
+            </div>
+
+
         </div>
     )
 }

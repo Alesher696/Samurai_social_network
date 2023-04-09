@@ -23,7 +23,6 @@ type mapStateToPropsType = {
     pageSize: number,
     totalUsersCount: number,
     isFetching: boolean
-
 }
 
 type mapDispatchToPropsType = {
@@ -42,23 +41,29 @@ export class UsersAPIComponent extends React.Component <UsersPropsType, {}> {
 
     componentDidMount() {
         this.props.showLoader(true)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
-            .then(response => {
-                this.props.showLoader(false)
-                this.props.setUsers(response.data.items)
-                this.props.setTotalUserCount(response.data.totalCount)
-            })
+        setTimeout(()=>{
+            axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+                .then(response => {
+                    this.props.showLoader(false)
+                    this.props.setUsers(response.data.items)
+                    this.props.setTotalUserCount(response.data.totalCount)
+                })
+        },3000)
+
     }
 
 
     onClickPageHandler = (page: number) => {
         this.props.setCurrentPage(page)
         this.props.showLoader(true)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page}&count=${this.props.pageSize}`)
-            .then(response => {
-                this.props.showLoader(false)
-                this.props.setUsers(response.data.items)
-            })
+        setTimeout(()=>{
+            axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page}&count=${this.props.pageSize}`)
+                .then(response => {
+                    this.props.showLoader(false)
+                    this.props.setUsers(response.data.items)
+                })
+        }, 1500)
+
     }
 
     render() {
@@ -74,8 +79,6 @@ export class UsersAPIComponent extends React.Component <UsersPropsType, {}> {
                                                                        isFetching={this.props.isFetching}
                                                                        showLoader={this.props.showLoader}
                 />}
-
-
             </div>
         )
     }

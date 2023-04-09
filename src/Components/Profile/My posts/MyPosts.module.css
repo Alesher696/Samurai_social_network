@@ -5,12 +5,13 @@
 }
 
 .postsList {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    width: max-content;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-around;
+    margin: 0 auto;
+
+
 }
 
 
@@ -35,9 +36,9 @@
     height: 50px;
     padding: 12px 20px;
     box-sizing: border-box;
-    border: 2px solid rgb(162, 162, 162);
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
     border-radius: 4px;
-    background-color: #9f9f9f;
+    background-color: #20222c;
     font-size: 16px;
     resize: none;
     outline: none;
@@ -53,7 +54,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color:  rgba(185, 185, 185, 0.22);
+
     box-shadow: 0 0 7px rgba(0,0,0,0.5)
 
 }

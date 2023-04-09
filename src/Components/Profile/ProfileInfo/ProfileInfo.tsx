@@ -11,7 +11,7 @@ export const ProfileInfo = (props: ProfileInfoPropsType) => {
 
     if(props.profile === null) {
 
-        return <div> NULL</div>
+        return <div>NULL</div>
     }
 
     return <div className={p.container}>
