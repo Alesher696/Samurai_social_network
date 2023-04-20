@@ -1,6 +1,7 @@
 import React from "react";
 import p from './Post.module.css'
 import avatar from '../../../../avatar.jpg'
+import heart from './heart (1).png'
 
 
 type PostPropsType = {
@@ -18,7 +19,7 @@ export const Post = (props:PostPropsType) => {
                 {props.value}
             </div>
             <div className={p.buttons}>
-                <button className={p.btn}>like</button>
+                <button className={p.btnLike}></button>
                 <button className={p.btn}>editor</button>
             </div>
 

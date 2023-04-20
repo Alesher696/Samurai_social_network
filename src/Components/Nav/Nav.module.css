@@ -3,21 +3,42 @@
     background-color: #1C1E26;
     height: 100vh;
     position: fixed;
+    top: 50px;
     -webkit-box-shadow: 22px 2px 12px -16px rgba(63, 63, 63, 0.76);
     -moz-box-shadow: 22px 2px 12px -16px rgba(63, 63, 63, 0.76);
     box-shadow: 22px 2px 12px -16px rgba(63, 63, 63, 0.53);
     color: white;
     display: flex;
     padding-top: 30px;
+    opacity: 1;
+    transition: 0.2s;
+
+
 }
 
+.navPanelClosed {
+    width: 350px;
+    background-color: #1C1E26;
+    position: fixed;
+    height: 100vh;
+    top: 50px;
+    -webkit-box-shadow: 22px 2px 12px -16px rgba(63, 63, 63, 0.76);
+    -moz-box-shadow: 22px 2px 12px -16px rgba(63, 63, 63, 0.76);
+    box-shadow: 22px 2px 12px -16px rgba(63, 63, 63, 0.53);
+    color: white;
+    display: flex;
+    padding-top: 30px;
+    transition: 0.2s;
+    opacity: 0;
+    /*left:-340px;*/
+}
 .navLinks {
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: baseline;
-
 }
+
 
 .icons {
     width: 20px;
@@ -35,8 +56,6 @@
     height: 36px;
 }
 
-
-
 .btn {
     margin-inline: 10px;
     text-decoration: none;
@@ -49,7 +68,7 @@
 }
 
 
-.btnLink:hover{
+.btnLink:hover {
     background-color: #3D50FA;
     width: 130px;
     height: 36px;
@@ -60,12 +79,29 @@
     transition: 0.2s;
 
 }
+.btnLinkActive {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 10px;
+    padding-inline: 10px;
+    margin-inline: 20px;
+    width: 130px;
+    height: 36px;
+    background-color: #3D50FA;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 1px 19px 4px #3D50FA;
+    -moz-box-shadow: 0px 1px 19px 4px #3D50FA;
+    box-shadow: 0px 1px 19px 4px #3D50FA;
+}
 
-.spanText{
+
+
+.spanText {
     margin-left: 8px;
 }
 
-.space{
+.space {
     margin-inline: 40px;
     margin-top: 40px;
 }

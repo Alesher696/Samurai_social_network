@@ -10,11 +10,10 @@ import {
     UnFollowAC,
     userType
 } from "../../redux/users-reducer";
-import axios from "axios";
 import {Users} from "./Users";
 import loader from '../../tail-spin.svg'
 import users from "./users.module.css";
-
+import {usersAPI} from "../../api/api";
 
 
 type mapStateToPropsType = {
@@ -41,44 +40,46 @@ export class UsersAPIComponent extends React.Component <UsersPropsType, {}> {
 
     componentDidMount() {
         this.props.showLoader(true)
-        setTimeout(()=>{
-            axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
-                .then(response => {
+        setTimeout(() => {
+            usersAPI.getUsers(this.props.currentPage,this.props.pageSize)
+                .then(data => {
                     this.props.showLoader(false)
-                    this.props.setUsers(response.data.items)
-                    this.props.setTotalUserCount(response.data.totalCount)
+                    this.props.setUsers(data.items)
+                    this.props.setTotalUserCount(data.totalCount)
                 })
-        },3000)
+        }, 1000)
 
     }
+
 
 
     onClickPageHandler = (page: number) => {
         this.props.setCurrentPage(page)
         this.props.showLoader(true)
-        setTimeout(()=>{
-            axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page}&count=${this.props.pageSize}`)
-                .then(response => {
+        setTimeout(() => {
+            usersAPI.getUsers(page, this.props.pageSize)
+                .then(data => {
                     this.props.showLoader(false)
-                    this.props.setUsers(response.data.items)
+                    this.props.setUsers(data.items)
                 })
-        }, 1500)
+        }, 1000)
 
     }
 
     render() {
         return (<div className={users.usersContainer}>
 
-                {this.props.isFetching ? <img src={loader} alt={'loader'}/> :  <Users totalUsersCount={this.props.totalUsersCount}
-                                                                       pageSize={this.props.pageSize}
-                                                                       currentPage={this.props.currentPage}
-                                                                       onClickPageHandler={this.onClickPageHandler}
-                                                                       unfollow={this.props.unfollow}
-                                                                       follow={this.props.follow}
-                                                                       users={this.props.usersPage}
-                                                                       isFetching={this.props.isFetching}
-                                                                       showLoader={this.props.showLoader}
-                />}
+                {this.props.isFetching ? <img src={loader} alt={'loader'}/> :
+                    <Users totalUsersCount={this.props.totalUsersCount}
+                           pageSize={this.props.pageSize}
+                           currentPage={this.props.currentPage}
+                           onClickPageHandler={this.onClickPageHandler}
+                           unfollow={this.props.unfollow}
+                           follow={this.props.follow}
+                           users={this.props.usersPage}
+                           isFetching={this.props.isFetching}
+                           showLoader={this.props.showLoader}
+                    />}
             </div>
         )
     }

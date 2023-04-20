@@ -7,7 +7,6 @@ const SET_CURRENT_PAGE = 'SET-CURRENT-PAGE'
 const SET_TOTAL_USER_COUNT = 'SET-USER-TOTAL-COUNT'
 const SHOW_LOADER = 'SHOW-LOADER'
 
-
 export type userType = {
     id: number
     followed: boolean
@@ -24,13 +23,15 @@ export type initialStateUsersType = {
     totalUsersCount: number
     currentPage: number
     isFetching: boolean
+    foundedUser : userType[] | null
 }
 const initialState: initialStateUsersType = {
     users: [],
     pageSize: 5,
     totalUsersCount: 0,
     currentPage: 1,
-    isFetching: true
+    isFetching: true,
+    foundedUser: null
 }
 
 // type FollowType = {

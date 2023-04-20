@@ -7,10 +7,7 @@ import {ProfileType, setUserProfileAC} from "../../redux/profile-reducer";
 import {Dispatch} from "redux";
 
 
-
-
-
-type PathParamsType ={
+type PathParamsType = {
     userId: string
 }
 
@@ -27,12 +24,10 @@ type PathParamsType ={
 export type ProfilePropsType = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
 
 
-
 export class ProfileAPI extends React.Component<ProfilePropsType, {}> {
 
 
     componentDidMount() {
-
         axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`)
             .then(response => {
                 this.props.setUserProfile(response.data)
@@ -40,7 +35,6 @@ export class ProfileAPI extends React.Component<ProfilePropsType, {}> {
     }
 
     render() {
-
         return <Profile {...this.props} />
     }
 }
@@ -51,9 +45,9 @@ const mapStateToProps = (state: storeType) => {
     }
 }
 
-const mapDispatchToProps =(dispatch: Dispatch)=>{
+const mapDispatchToProps = (dispatch: Dispatch) => {
     return {
-        setUserProfile : (profile: ProfileType)=> {
+        setUserProfile: (profile: ProfileType) => {
             dispatch(setUserProfileAC(profile))
         }
     }

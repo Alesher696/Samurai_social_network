@@ -3,14 +3,15 @@
     padding: 0;
 
 }
-body{
+
+body {
 
 }
+
 .App {
     background-color: #20222c;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    display: flex;
+    flex-direction: column;
 }
 
 .App-wrapper-content {
