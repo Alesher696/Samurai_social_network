@@ -26,10 +26,10 @@ const App: React.FC<AppPropsType> = (props) => {
                 <Nav activeButton={activeButton}/>
                 <div className='App-wrapper-content'>
                     <Routes>
-                        <Route path={'/Samurai_social_network'} element={<Navigate to={'/profile'}/>}/>
+                        <Route path={'/Samurai_social_network'} element={<Navigate to={'/profile/2'}/>}/>
                         <Route path='/dialogs'
                                element={<DialogsContainer/>}/>
-                        <Route path='/profile/*'
+                        <Route path='/profile/:profileId?'
                                element={<ProfileContainer/>}/>
                         <Route path='/users' element={<UsersContainer/>}/>
                         <Route path='/friends' element={<Friends/>}/>

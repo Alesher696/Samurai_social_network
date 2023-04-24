@@ -1,9 +1,9 @@
-import {combineReducers, compose, createStore} from "redux";
+import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import {profileReducer} from "./profile-reducer";
 import {dialogsReducer} from "./dialogs-reducer";
 import {usersReducer} from "./users-reducer";
 import {authReducer} from "./auth-reducer";
-
+import thunkMiddleware from "redux-thunk"
 
 declare global {
     interface Window {
@@ -20,11 +20,12 @@ const rootReducer = combineReducers({
     auth: authReducer
 })
 
-
+//for thunk
+export type RootState = ReturnType<typeof store.getState>
 
 export type storeType = ReturnType<typeof rootReducer>
 
-export const store = createStore(rootReducer);
+export const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
 // @ts-ignore
 window.store = store;

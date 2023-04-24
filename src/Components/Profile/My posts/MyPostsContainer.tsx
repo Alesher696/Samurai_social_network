@@ -12,6 +12,7 @@ import {Dispatch} from "redux";
 
 type mapStatePropsType = {
     profilePage: InitialStateType
+
 }
 
 type mapDispatchPropsType = {

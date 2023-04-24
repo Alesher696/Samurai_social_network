@@ -4,7 +4,7 @@ import {
     FollowACType,
     SetCurrentPageACType,
     SetUsersACType,
-    setUserTotalCountACType, ShowLoaderACType,
+    setUserTotalCountACType, ShowLoaderACType, toggleIsFollowingACType,
     UnFollowACType
 } from "./users-reducer";
 import {setUserDataACType} from "./auth-reducer";
@@ -22,4 +22,5 @@ export type ActionType =
     setUserTotalCountACType |
     ShowLoaderACType |
     setUserProfileType |
-    setUserDataACType
+    setUserDataACType |
+    toggleIsFollowingACType

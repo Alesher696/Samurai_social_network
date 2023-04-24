@@ -20,19 +20,17 @@ export const Header = React.memo((props:HeaderPropsType)=> {
         props.setActiveButton(!props.activeButton)
     }
 
-    //
-    // useEffect(() => {
-    //     console.log('useEffect')
-    //         setTimerId(setInterval(() => {
-    //             setTimer(new Date())
-    //         }, 1000))
-    //
-    //         if (timerID) {
-    //             return () => clearInterval(timerID)
-    //         }
-    //     }, []
-    // )
 
+    useEffect(() => {
+            setTimerId(setInterval(() => {
+                setTimer(new Date())
+            }, 1000))
+
+            if (timerID) {
+                return () => clearInterval(timerID)
+            }
+        }, []
+    )
 
     const PresentTime = (`${timer.getHours()} :
     ${(timer.getMinutes()) > 9 ? timer.getMinutes() : `0${timer.getMinutes()}`} :

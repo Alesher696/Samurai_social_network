@@ -8,14 +8,12 @@ import {
     IoPlaySkipForwardSharp
 } from "react-icons/io5";
 
-
 export const Controls = (props: any) => {
     const [isPlaying, setIsPlaying] = useState(false);
 
     // const togglePlayPause = () => {
     //     setIsPlaying((prev) => !prev);
     // }
-
 
     const togglePlayPause = () => {
         if (props.audioRef.current.paused) {
@@ -36,7 +34,6 @@ export const Controls = (props: any) => {
         };
     }, [props.audioRef]);
 
-
     // useEffect(() => {
     //     if (isPlaying) {
     //         // props.audioRef.current = new Audio(props.currentTrack.src);
@@ -48,7 +45,6 @@ export const Controls = (props: any) => {
     //         props.audioRef.current.pause();
     //     }
     // }, [isPlaying, props.audioRef])
-
 
     return (
         <div className="controls-wrapper">

@@ -14,7 +14,18 @@
 
 }
 
-
+.btnAddPost{
+    height: 50px;
+    background-color: #3D50FA;
+    border: none;
+    outline: none;
+    -webkit-box-shadow: 0px 1px 19px 4px #3D50FA;
+    -moz-box-shadow: 0px 1px 19px 4px #3D50FA;
+    box-shadow: 0px 1px 19px 4px #3D50FA;
+    border-radius: 10px;
+    width: 150px;
+    color: white;
+}
 .plus {
     background-image: url('ikonka-plyus-1-PhotoRoom.png-PhotoRoom.png');
     background-repeat: no-repeat;
@@ -32,7 +43,7 @@
 
 .textArea {
     text-align: center;
-    width: 800px;
+    width: 600px;
     height: 50px;
     padding: 12px 20px;
     box-sizing: border-box;
@@ -47,7 +58,7 @@
 }
 
 .addPost {
-    width: 1000px;
+    width: 980px;
     border-radius: 5px;
     height: 200px;
     margin: 0 auto;

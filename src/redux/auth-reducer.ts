@@ -1,9 +1,5 @@
 import {ActionType} from "./ActionType";
 
-
-
-
-
 export type authInitialType = {
     id: number | null,
     email: string | null,

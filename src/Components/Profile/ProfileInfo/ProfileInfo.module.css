@@ -1,38 +1,55 @@
-.profileInfo{
-    padding: 10px;
+.profileInfo {
 
 }
 
-.container{
-    padding: 10px;
-    border: 1px solid;
+.container {
+
+}
+
+.UserDescriber {
+    color: white;
     display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding-right: 20px;
 }
+
+.font {
+    width: 100%;
+    height: 300px;
+    background-image: url('https://abrakadabra.fun/uploads/posts/2021-12/1640924332_13-abrakadabra-fun-p-krasivie-sinie-oboi-na-telefon-sovremennie-15.jpg');
+
+}
+
 .avatar {
-    background-size: 150px 150px;
-    background-repeat: no-repeat;
-    background-position: center;
+    /*background-size: 150px 150px;*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: left ;*/
     animation: morph 3s ease-in-out infinite;
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    height: 150px;
+    height: 180px;
     transition: all 0.5s ease-in-out;
-    width: 150px;
+    width: 180px;
     z-index: 1;
+    position: relative;
+    top: 150px;
+    left: 20px;
+
 }
 
 @keyframes morph {
     0% {
-        border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
         /*background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);*/
     }
 
     50% {
-        border-radius:  30% 60% 70% 40% / 50% 60% 30% 60%;
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
         /*background: linear-gradient(45deg, var(--third) 0%, var(--secondary) 100%);*/
     }
 
     100% {
-        border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
         /*background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);*/
     }
 }

@@ -92,6 +92,7 @@ export const updateNewPostTextAC = (text: string): updateNewPostTextACType => ({
 
 export type setUserProfileType = ReturnType<typeof setUserProfileAC>
 export const setUserProfileAC = (profile: ProfileType) => {
+
     return {
         type: 'SET-USER-PROFILE',
         profile
