@@ -21,7 +21,7 @@ export const MyPosts: React.FC<MyPostsPropsType> = (props) => {
     return (
         <div className={m.myPostsBlock}>
             <div className={m.addPost}>
-                <img src={props.profilePage.profile?.photos.small} className={m.avatar}/>
+                <img src={props.profilePage.profile?.photos.small ? props.profilePage.profile?.photos.small : avatar} className={m.avatar}/>
                 <textarea
                     onFocus={props.onFocusHandler}
                     // ref={newPostElement}

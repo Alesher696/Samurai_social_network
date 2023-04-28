@@ -46,3 +46,10 @@ display: flex;
     justify-content: flex-end;
     margin:10px;
 }
+.ramka{
+    background-image: url("https://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/322330/c7717f6c606a9528fd5fffc4bb22ed9e1094385f.png");
+    height: 100px;
+    width: 100px;
+    background-size: 100px;
+    background-repeat: no-repeat;
+}

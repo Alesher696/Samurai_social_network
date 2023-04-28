@@ -16,7 +16,6 @@ type NavPropsType={
 export const Nav = (props:NavPropsType) => {
 
     const profileId = useSelector<storeType>(state=> state.profilePage.profile?.userId)
-    const buttonsName = ['start', 'messages', 'users', 'music', 'settings']
     const [btnName,setBtnName] = React.useState('start')
     const onClickButtonHandler=(value:string)=>{
         setBtnName(value)

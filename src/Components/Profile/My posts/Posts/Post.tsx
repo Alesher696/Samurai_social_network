@@ -1,21 +1,19 @@
 import React from "react";
 import p from './Post.module.css'
 import avatar from '../../../../avatar.jpg'
-import heart from './heart (1).png'
+
 
 
 type PostPropsType = {
-    value : string
-    likes : number
+    value: string
+    likes: number
     photo: string | undefined
 }
 
-
-export const Post = (props:PostPropsType) => {
+export const Post = (props: PostPropsType) => {
     return (
         <div className={p.post}>
-
-            <div className={p.avatarAndLikes}> <img src={props.photo}/> likes: {props.likes}</div>
+            <div className={p.avatarAndLikes}><img src={props.photo ? props.photo : avatar}/> likes: {props.likes}</div>
             <div className={p.postText}>
                 {props.value}
             </div>
@@ -23,8 +21,6 @@ export const Post = (props:PostPropsType) => {
                 <button className={p.btnLike}></button>
                 <button className={p.btn}>editor</button>
             </div>
-
-
         </div>
     )
 }

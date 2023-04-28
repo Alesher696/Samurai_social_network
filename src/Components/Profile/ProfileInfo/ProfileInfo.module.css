@@ -20,6 +20,14 @@
     background-image: url('https://abrakadabra.fun/uploads/posts/2021-12/1640924332_13-abrakadabra-fun-p-krasivie-sinie-oboi-na-telefon-sovremennie-15.jpg');
 
 }
+.icons{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    bottom: 260px;
+    left: 970px;
+    cursor: pointer;
+}
 
 .avatar {
     /*background-size: 150px 150px;*/

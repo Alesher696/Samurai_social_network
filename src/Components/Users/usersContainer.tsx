@@ -2,11 +2,9 @@ import React from 'react';
 import {connect} from "react-redux";
 import {storeType} from "../../redux/redux-store";
 import {
-    FollowAC, followTC,
-    getUsersThunkCreator,
+    followTC, getUsersTC,
     SetCurrentPageAC,
-    setUserTotalCountAC,
-    toggleIsFollowingAC, UnFollowAC, unFollowTC,
+    toggleIsFollowingAC, unFollowTC,
     userType
 } from "../../redux/users-reducer";
 import {Users} from "./Users";
@@ -29,7 +27,7 @@ type mapDispatchToPropsType = {
     unFollowTC: (userId: number) => void
     SetCurrentPageAC: (page: number) => void
     toggleIsFollowingAC: (userId: number, isFetching: boolean) => void
-    getUsersThunkCreator: (currentPage: number, pageSize: number) => void
+    getUsersTC: (currentPage: number, pageSize: number) => void
 }
 
 export type UsersPropsType = mapStateToPropsType & mapDispatchToPropsType
@@ -38,12 +36,12 @@ export type UsersPropsType = mapStateToPropsType & mapDispatchToPropsType
 export class UsersAPIComponent extends React.Component <UsersPropsType, {}> {
 
     componentDidMount() {
-       this.props.getUsersThunkCreator(this.props.currentPage, this.props.pageSize)
+       this.props.getUsersTC(this.props.currentPage, this.props.pageSize)
 
     }
 
     onClickPageHandler = (page: number) => {
-        this.props.getUsersThunkCreator(page, this.props.pageSize)
+        this.props.getUsersTC(page, this.props.pageSize)
     }
 
     render() {
@@ -107,5 +105,5 @@ const mapStateToProps = (state: storeType): mapStateToPropsType => {
 
 export const UsersContainer = connect(mapStateToProps, {
     followTC, unFollowTC, SetCurrentPageAC,
-    toggleIsFollowingAC, getUsersThunkCreator,
+    toggleIsFollowingAC, getUsersTC,
 })(UsersAPIComponent)

@@ -2,61 +2,33 @@ import React, {useEffect} from 'react';
 import {Profile} from "./profile";
 import {connect} from "react-redux";
 import {storeType} from "../../redux/redux-store";
-import axios from "axios";
-import {ProfileType, setUserProfileAC} from "../../redux/profile-reducer";
-import {Dispatch} from "redux";
-import {useLocation, useParams} from "react-router-dom";
+import {getUserProfileTC, ProfileType} from "../../redux/profile-reducer";
+import {useParams} from "react-router-dom";
+import {usersAPI} from "../../api/api";
 
 
-// type PathParamsType = {
-//     userId: string
-// }
 
-// type PropsType = RouteComponentProps<PathParamsType> & ProfilePropsType
 
-// export type mapStateToPropsType = {
-//     profile: ProfileType | null
-// }
 
-// export type mapDispatchToPropsType = {
-//     setUserProfile: (profile: ProfileType | null) => void
-// }
-
-export type ProfilePropsType = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
-
+type mapDispatchToPropsType = {
+    getUserProfileTC:(profileId:number) => void
+}
+type mapStateToPropsType={
+    profilePage: ProfileType
+}
+export type ProfilePropsType = mapStateToPropsType & mapDispatchToPropsType
 
 export const ProfileAPI2 = (props: ProfilePropsType) => {
 
     const Params = useParams<'profileId'>()
     const profileId = Params.profileId || '2'
 
-
     useEffect(() => {
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${profileId}`)
-            .then(response => {
-                props.setUserProfile(response.data)
-            })
-    }, [profileId])
+        props.getUserProfileTC(+profileId)
+    },[profileId])
 
-
-    return <Profile {...props} />
+    return <Profile profile={props.profilePage}/>
 }
-
-
-// export class ProfileAPI extends React.Component<ProfilePropsType, {}> {
-//
-//     componentDidMount() {
-//         axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`)
-//             .then(response => {
-//                 this.props.setUserProfile(response.data)
-//             })
-//     }
-//
-//     render() {
-//
-//         return <Profile {...this.props} />
-//     }
-// }
 
 const mapStateToProps = (state: storeType) => {
     return {
@@ -64,17 +36,18 @@ const mapStateToProps = (state: storeType) => {
     }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch) => {
-    return {
-        setUserProfile: (profile: ProfileType) => {
-            dispatch(setUserProfileAC(profile))
-        }
-    }
-}
+// const mapDispatchToProps = (dispatch: Dispatch) => {
+//     return {
+//         setUserProfile: (profile: ProfileType) => {
+//             dispatch(setUserProfileAC(profile))
+//         },
+//         getUsersTC:(profileId:string)=>{
+//
+//         }
+//     }
+// }
 
-// const WithRouterProfile = withRouter(ProfileAPI)
-
-export const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(ProfileAPI2)
+export const ProfileContainer = connect(mapStateToProps, {getUserProfileTC})(ProfileAPI2)
 
 
 

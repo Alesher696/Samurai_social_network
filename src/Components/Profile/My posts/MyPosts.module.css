@@ -25,6 +25,7 @@
     border-radius: 10px;
     width: 150px;
     color: white;
+    cursor: pointer;
 }
 .plus {
     background-image: url('ikonka-plyus-1-PhotoRoom.png-PhotoRoom.png');

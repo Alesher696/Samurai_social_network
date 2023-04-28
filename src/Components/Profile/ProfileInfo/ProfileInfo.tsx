@@ -3,7 +3,7 @@ import p from "./ProfileInfo.module.css"
 import {ProfileType} from "../../../redux/profile-reducer";
 import avatar from '../../../avatar.jpg'
 import loader from "../../../tail-spin.svg";
-import font from './fonts/font.jpg'
+import edit from '../../Header/icons/edit (1) (1).png'
 
 type ProfileInfoPropsType = {
     profile: ProfileType
@@ -17,7 +17,7 @@ export const ProfileInfo = (props: ProfileInfoPropsType) => {
 
     return <div className={p.container}>
         <div className={p.font}>
-            <img src={props.profile.photos.large} className={p.avatar}/>
+            <img src={props.profile.photos.large ? props.profile.photos.large: avatar} className={p.avatar}/>
 
             <div className={p.UserDescriber}>
                 <h1>{props.profile.fullName}</h1>
@@ -27,6 +27,7 @@ export const ProfileInfo = (props: ProfileInfoPropsType) => {
                 </div>
 
             </div>
+            <img src={edit} className={p.icons}/>
         </div>
 
     </div>

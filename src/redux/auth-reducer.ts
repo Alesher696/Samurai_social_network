@@ -1,4 +1,6 @@
 import {ActionType} from "./ActionType";
+import {Dispatch} from "redux";
+import {authAPI} from "../api/api";
 
 export type authInitialType = {
     id: number | null,
@@ -34,4 +36,17 @@ export const setUserDataAC= (userId:number, email:string, login:string)=>{
         }
 
     }as const
+}
+
+
+export const GetAuthUserDataTC = () => {
+    return (dispatch: Dispatch) => {
+        authAPI.authMe()
+            .then(data => {
+                if (data.resultCode === 0) {
+                    const {email, id, login} = data.data
+                    dispatch(setUserDataAC(id, email, login))
+                }
+            })
+    }
 }
