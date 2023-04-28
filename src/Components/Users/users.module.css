@@ -1,5 +1,4 @@
 .usersContainer{
-    border: 1px solid;
     width: 1000px;
     padding: 10px;
 }
@@ -15,4 +14,9 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    color:white;
+}
+
+.users{
+    color:white;
 }

@@ -1,7 +1,6 @@
 .myPostsBlock {
     padding: 10px;
     text-align: center;
-
 }
 
 .postsList {
@@ -10,9 +9,10 @@
     flex-direction: column;
     flex-wrap: wrap;
     margin: 0 auto;
-
-
 }
+
+
+
 
 .btnAddPost{
     height: 50px;
@@ -26,21 +26,39 @@
     width: 150px;
     color: white;
     cursor: pointer;
+    transition: all 500ms ease;
+    position: relative;
 }
-.plus {
-    background-image: url('ikonka-plyus-1-PhotoRoom.png-PhotoRoom.png');
-    background-repeat: no-repeat;
-    width: 50px;
+
+.btnAddPost:before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
     height: 50px;
-    background-position: center;
-    background-size: 50px 50px;
-    border-radius: 2px;
-    border: 1px solid rgba(255, 255, 255, 0);
-    margin-inline: 2px;
-    background-color: rgba(255, 255, 255, 0);
-
-
+    background-color: rgba(109, 121, 234, 0.47);;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    color: white;
 }
+
+.btnAddPost:hover:before {
+    width: 100%;
+}
+
+/*.plus {*/
+/*    background-image: url('ikonka-plyus-1-PhotoRoom.png-PhotoRoom.png');*/
+/*    background-repeat: no-repeat;*/
+/*    width: 50px;*/
+/*    height: 50px;*/
+/*    background-position: center;*/
+/*    background-size: 50px 50px;*/
+/*    border-radius: 2px;*/
+/*    border: 1px solid rgba(255, 255, 255, 0);*/
+/*    margin-inline: 2px;*/
+/*    background-color: rgba(255, 255, 255, 0);*/
+/*}*/
 
 .textArea {
     text-align: center;
@@ -66,9 +84,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     box-shadow: 0 0 7px rgba(0,0,0,0.5)
-
 }
 .avatar{
     width: 80px;

@@ -37,7 +37,7 @@ export const Users = (props: UsersPropsType) => {
                 props.users.map((u: userType) => {
 
                     return (
-                        <div key={u.id}>
+                        <div key={u.id} className={users.users}>
                             <NavLink key={u.id} to={'/profile/' + u.id}>
                                 <div><img className={users.avatar} src={avatar} alt={'avatar'}/></div>
                             </NavLink>
@@ -55,11 +55,7 @@ export const Users = (props: UsersPropsType) => {
                                 }
                             </div>
                             <span>{u.status}</span>
-                            <div>
-                                <span>{'u.location.country'}</span>
-                                <br/>
-                                <span>{'u.location.city'}</span>
-                            </div>
+                           <br/>
                         </div>)
                 })
             }

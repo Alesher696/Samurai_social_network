@@ -1,25 +1,32 @@
-.dialogs{
+.dialogs {
     padding: 10px;
-    border: 1px solid;
-width: 1000px;
+    width: 1000px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
-.dialogsFriends{
+
+.dialogsFriends {
     grid-area: friends;
 }
 
-.dialogsItems{
-display: flex;
+.dialogsItems {
+    display: flex;
     align-items: center;
     padding-top: 10px;
 }
 
-.avatar{
+.avatar {
     width: 50px;
     height: 50px;
-    border-radius: 30px;
+    z-index: 10;
+    border: 10px solid;
+    border-image: url("https://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/322330/c7717f6c606a9528fd5fffc4bb22ed9e1094385f.png") 20;
+
 }
-.avatarMessage{
+
+.avatarMessage {
     width: 30px;
     height: 30px;
     border-radius: 15px;
@@ -28,28 +35,40 @@ display: flex;
     top: -8px;
 }
 
-.userName{
+.userName {
     padding-left: 5px;
+    text-decoration: none;
+    color: white;
 }
-.messageSend{
-    grid-area: messageSend;
+
+.messageSend {
+    /*grid-area: messageSend;*/
     margin-top: 20px;
+    position: relative;
+    top: 450px;
+    display: flex;
+    justify-content: center;
+    height: 30px;
 
 }
-.message{
-    grid-area: message;
-    position: relative;
-    right: 800px;
+
+.message {
+    /*grid-area: message;*/
+    /*position: relative;*/
+    /*right: 800px;*/
 }
-.messagesInMessage{
+
+.messagesInMessage {
     display: flex;
     justify-content: flex-end;
-    margin:10px;
+    margin: 10px;
 }
-.ramka{
-    background-image: url("https://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/322330/c7717f6c606a9528fd5fffc4bb22ed9e1094385f.png");
-    height: 100px;
-    width: 100px;
-    background-size: 100px;
-    background-repeat: no-repeat;
-}
+
+/*.ramka{*/
+/*    background-image: url("https://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/322330/c7717f6c606a9528fd5fffc4bb22ed9e1094385f.png");*/
+/*    height: 50px;*/
+/*    width: 50px;*/
+/*    background-size: 100px;*/
+/*    background-repeat: no-repeat;*/
+/*    z-index: 10;*/
+/*}*/

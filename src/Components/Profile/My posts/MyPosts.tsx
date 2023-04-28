@@ -31,7 +31,7 @@ export const MyPosts: React.FC<MyPostsPropsType> = (props) => {
                 />
                 <button
                     onClick={props.addPost}
-                    className={m.btnAddPost}> Add Post</button>
+                    className={m.btnAddPost}>Add Post</button>
             </div>
             <div className={m.postsList} ref={listRef}>
                 {postList}

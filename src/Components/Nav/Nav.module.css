@@ -12,8 +12,7 @@
     padding-top: 30px;
     opacity: 1;
     transition: 0.2s;
-
-
+    z-index: 11;
 }
 
 .navPanelClosed {
@@ -32,13 +31,13 @@
     opacity: 0;
     /*left:-340px;*/
 }
+
 .navLinks {
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: baseline;
 }
-
 
 .icons {
     width: 20px;
@@ -54,6 +53,7 @@
     margin-inline: 20px;
     width: 115px;
     height: 36px;
+    position: relative;
 }
 
 .btn {
@@ -67,7 +67,6 @@
     flex-direction: row;
 }
 
-
 .btnLink:hover {
     background-color: #3D50FA;
     width: 130px;
@@ -77,8 +76,8 @@
     -moz-box-shadow: 0px 1px 19px 4px #3D50FA;
     box-shadow: 0px 1px 19px 4px #3D50FA;
     transition: 0.2s;
-
 }
+
 .btnLinkActive {
     display: flex;
     justify-content: start;
@@ -94,8 +93,6 @@
     -moz-box-shadow: 0px 1px 19px 4px #3D50FA;
     box-shadow: 0px 1px 19px 4px #3D50FA;
 }
-
-
 
 .spanText {
     margin-left: 8px;
