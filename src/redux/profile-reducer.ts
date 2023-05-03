@@ -9,7 +9,6 @@ export type PostsPropsType = {
     like: number
 }
 
-
 export type ContactsType = {
     github: string
     vk: string

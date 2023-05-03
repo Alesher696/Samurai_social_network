@@ -2,9 +2,8 @@ import React, {ChangeEvent} from 'react';
 import d from "./Dialogs.module.css"
 import {DialogItem} from "./DialogItem/DialogItem";
 import {Message} from "./Messages/Messages";
-import {ActionType} from '../../redux/ActionType';
-import {dialogsPropsType, messagesPropsType} from "../../redux/dialogs-reducer";
 import {DialogsType} from "./dialogsContainer";
+import m from "../Profile/My posts/MyPosts.module.css";
 
 
 
@@ -34,8 +33,12 @@ export const Dialogs: React.FC<DialogsType> = (props) => {
             </div>
             <div className={d.messageSend}>
                 <textarea value={props.dialogsPage.newMessageBody} onChange={onChangeHandler}></textarea>
-                <button onClick={onClickHandler}>send</button>
+
+                <button
+                    onClick={onClickHandler}
+                    className={m.btnAddPost}>Send</button>
             </div>
+            <div className={d.dialogsSpaceForNews}></div>
         </div>
     );
 };

@@ -1,7 +1,7 @@
 import React, {useEffect, useMemo} from "react";
 import h from './Header.module.css'
-import burger from './icons/mozy (1).png'
-import burgerActive from './icons/share (1).png'
+import burgerActive from './icons/list (1) (1).png'
+import burger from './icons/share (1).png'
 import {NavLink} from "react-router-dom";
 
 

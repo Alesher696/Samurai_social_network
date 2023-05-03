@@ -9,7 +9,7 @@
     z-index: 12;
     color: white;
     padding-left: 20px;
-    padding-right: 20px;
+    /*padding-right: 20px;*/
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -22,4 +22,21 @@
 
 .btn:hover{
 
+}
+
+.loginBlock{
+    height: 94%;
+    width: max-content;
+
+    background-color: #3D50FA;
+    -webkit-box-shadow: 0px 1px 19px 4px #3D50FA;
+    -moz-box-shadow: 0px 1px 19px 4px #3D50FA;
+    box-shadow: 0px 1px 19px 4px #3D50FA;
+    padding-inline: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }

@@ -8,12 +8,12 @@ import {dialogsPropsType} from "../../../redux/dialogs-reducer";
 export const DialogItem = (props: dialogsPropsType) => {
     let path = 'dialogs/' + props.id
     return (
-        <div className={d.dialogsItems}>
+        <NavLink className={d.dialogsItems} to={path}>
             <div>
                 <img className={d.avatar} src={avatar}/>
             </div>
-            <NavLink className={d.userName} to={path}>{props.name}</NavLink>
-        </div>
+            <span className={d.userName}>{props.name}</span>
+        </NavLink>
     )
 }
 

@@ -1,6 +1,8 @@
 .usersContainer{
     width: 1000px;
     padding: 10px;
+    margin: 0 auto;
+    max-height: max-content;
 }
 .activePage{
     font-weight: bold;

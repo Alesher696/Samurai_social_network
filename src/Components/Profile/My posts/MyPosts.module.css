@@ -22,7 +22,7 @@
     -webkit-box-shadow: 0px 1px 19px 4px #3D50FA;
     -moz-box-shadow: 0px 1px 19px 4px #3D50FA;
     box-shadow: 0px 1px 19px 4px #3D50FA;
-    border-radius: 10px;
+    border-radius: 7px;
     width: 150px;
     color: white;
     cursor: pointer;
@@ -37,8 +37,8 @@
     left: 0;
     width: 0;
     height: 50px;
-    background-color: rgba(109, 121, 234, 0.47);;
-    border-radius: 10px;
+    background-color: rgba(109, 121, 234, 0.11);;
+    border-radius: 7px;
     transition: all 0.5s ease;
     color: white;
 }
@@ -80,7 +80,6 @@
     width: 980px;
     border-radius: 5px;
     height: 200px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
