@@ -12,7 +12,6 @@ import {Dispatch} from "redux";
 
 type mapStatePropsType = {
     profilePage: InitialStateType
-
 }
 
 type mapDispatchPropsType = {
@@ -20,6 +19,7 @@ type mapDispatchPropsType = {
     onFocusHandler: ()=> void
     onChangeHandler: (value: string)=> void
 }
+
 export type MyPostsPropsType = mapStatePropsType & mapDispatchPropsType
 
 

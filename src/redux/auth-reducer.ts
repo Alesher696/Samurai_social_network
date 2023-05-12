@@ -38,7 +38,6 @@ export const setUserDataAC= (userId:number, email:string, login:string)=>{
     }as const
 }
 
-
 export const GetAuthUserDataTC = () => {
     return (dispatch: Dispatch) => {
         authAPI.authMe()

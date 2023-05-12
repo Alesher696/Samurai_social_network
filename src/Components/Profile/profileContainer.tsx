@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import {storeType} from "../../redux/redux-store";
 import {getUserProfileTC, ProfileType} from "../../redux/profile-reducer";
 import {useParams} from "react-router-dom";
-import {usersAPI} from "../../api/api";
+
 
 
 

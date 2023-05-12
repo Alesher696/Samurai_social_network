@@ -140,7 +140,7 @@ export const toggleIsFollowingAC = (userId: number, isFetching: boolean) => {
 export const getUsersTC = (currentPage: number, pageSize: number) => {
     return (dispatch: Dispatch) => {
         dispatch(ShowLoaderAC(true))
-        usersAPI.getUsers(currentPage, pageSize)
+     usersAPI.getUsers(currentPage, pageSize)
             .then(data => {
                 dispatch(ShowLoaderAC(false))
                 dispatch(SetUsersAC(data.items))

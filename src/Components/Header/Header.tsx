@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo} from "react";
+import React, {useEffect} from "react";
 import h from './Header.module.css'
 import burgerActive from './icons/list (1) (1).png'
 import burger from './icons/share (1).png'
@@ -19,7 +19,6 @@ export const Header = React.memo((props:HeaderPropsType)=> {
     const onClickHandler = () => {
         props.setActiveButton(!props.activeButton)
     }
-
 
     useEffect(() => {
             setTimerId(setInterval(() => {
@@ -50,7 +49,6 @@ export const Header = React.memo((props:HeaderPropsType)=> {
                 {props.isAuth ? props.login : <NavLink to={'/login'}>login</NavLink>}
                 </div>
         </div>
-
     )
 })
 
