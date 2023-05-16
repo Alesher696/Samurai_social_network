@@ -4,14 +4,13 @@ import {DialogItem} from "./DialogItem/DialogItem";
 import {Message} from "./Messages/Messages";
 import {DialogsType} from "./dialogsContainer";
 import m from "../Profile/My posts/MyPosts.module.css";
-
-
-
+import {useNavigate} from "react-router-dom";
 
 
 export const Dialogs: React.FC<DialogsType> = (props) => {
 
-    const dialogsList = props.dialogsPage.dialogs.map(dialog => <DialogItem key={dialog.id} name={dialog.name} id={dialog.id}/>)
+    const dialogsList = props.dialogsPage.dialogs.map(dialog => <DialogItem key={dialog.id} name={dialog.name}
+                                                                            id={dialog.id}/>)
 
     const messagesElement = props.dialogsPage.messages.map(m => <Message key={m.id} id={m.id} message={m.message}/>)
 
@@ -21,6 +20,13 @@ export const Dialogs: React.FC<DialogsType> = (props) => {
 
     const onClickHandler = () => {
         props.sendMessage()
+    }
+
+    const navigate = useNavigate()
+
+    if (!props.isAuth) {
+        navigate('/login')
+        return null
     }
 
     return (
@@ -36,7 +42,8 @@ export const Dialogs: React.FC<DialogsType> = (props) => {
 
                 <button
                     onClick={onClickHandler}
-                    className={m.btnAddPost}>Send</button>
+                    className={m.btnAddPost}>Send
+                </button>
             </div>
             <div className={d.dialogsSpaceForNews}></div>
         </div>

@@ -15,6 +15,7 @@ type mapDispatchToPropsType = {
 }
 type mapStateToPropsType={
     profilePage: ProfileType
+    isAuth: boolean
 }
 export type ProfilePropsType = mapStateToPropsType & mapDispatchToPropsType
 
@@ -27,12 +28,13 @@ export const ProfileAPI2 = (props: ProfilePropsType) => {
         props.getUserProfileTC(+profileId)
     },[profileId])
 
-    return <Profile profile={props.profilePage}/>
+    return <Profile profile={props.profilePage} isAuth={props.isAuth}/>
 }
 
 const mapStateToProps = (state: storeType) => {
     return {
-        profilePage: state.profilePage.profile
+        profilePage: state.profilePage.profile,
+        isAuth: state.auth.isAuth
     }
 }
 

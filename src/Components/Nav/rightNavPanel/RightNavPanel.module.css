@@ -1,6 +1,6 @@
 .navPanel {
     width: 80px;
-    background-color: #1C1E26;
+    background-color: #09090c;
     height: 93vh;
     position: fixed;
     right: 0;
@@ -26,6 +26,7 @@
     cursor: pointer;
     padding-bottom: 20px;
     display: flex;
+    width: 80px;
     flex-direction: column;
     font-size: 12px ;
     align-items: center;
@@ -44,4 +45,8 @@
     bottom: 30px;
     border-radius: 3px;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+}
+
+.isActive{
+    background-color: #656565;
 }

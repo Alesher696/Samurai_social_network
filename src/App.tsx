@@ -11,6 +11,7 @@ import {Nav} from "./Components/Nav/Nav";
 import {ProfileContainer} from "./Components/Profile/profileContainer";
 import HeaderContainer from "./Components/Header/HeaderContainer";
 import {RightNavPanel} from "./Components/Nav/rightNavPanel/RightNavPanel";
+import {Login} from "./Components/Login/Login";
 
 
 type AppPropsType = {}
@@ -47,6 +48,7 @@ const App: React.FC<AppPropsType> = (props) => {
                         <Route path='/users' element={<UsersContainer/>}/>
                         <Route path='/friends' element={<Friends/>}/>
                         <Route path='/music' element={<Music/>}/>
+                        <Route path='/login' element={<Login/>}/>
                     </Routes>
                 {/*</div>*/}
                 <SubFooter/>
