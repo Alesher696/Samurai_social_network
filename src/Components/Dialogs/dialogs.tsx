@@ -39,7 +39,6 @@ export const Dialogs: React.FC<DialogsType> = (props) => {
             </div>
             <div className={d.messageSend}>
                 <textarea value={props.dialogsPage.newMessageBody} onChange={onChangeHandler}></textarea>
-
                 <button
                     onClick={onClickHandler}
                     className={m.btnAddPost}>Send
