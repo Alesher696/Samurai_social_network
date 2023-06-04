@@ -4,6 +4,7 @@ import {ProfileType} from "../../../redux/profile-reducer";
 import avatar from '../../../avatar.jpg'
 import loader from "../../../tail-spin.svg";
 import edit from '../../Header/icons/edit (1) (1).png'
+import {ProfileStatus} from "../../../Components/Profile/ProfileInfo/ProfileStatus"
 
 type ProfileInfoPropsType = {
     profile: ProfileType
@@ -22,6 +23,7 @@ export const ProfileInfo = (props: ProfileInfoPropsType) => {
             <div className={p.UserDescriber}>
                 <h1>{props.profile.fullName}</h1>
                 <div>
+                    Status: <ProfileStatus/>
                     <div>О себе: {props.profile.aboutMe}</div>
                     <div>О работе: {props.profile.lookingForAJobDescription}</div>
                 </div>

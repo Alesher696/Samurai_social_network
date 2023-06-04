@@ -1,16 +1,10 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {storeType} from "../../redux/redux-store";
-import {
-    followTC, getUsersTC,
-    SetCurrentPageAC,
-    toggleIsFollowingAC, unFollowTC,
-    userType
-} from "../../redux/users-reducer";
+import {followTC, getUsersTC, SetCurrentPageAC, toggleIsFollowingAC, unFollowTC, userType} from "../../redux/users-reducer";
 import {Users} from "./Users";
 import loader from '../../tail-spin.svg'
 import users from "./users.module.css";
-
 
 
 type mapStateToPropsType = {
@@ -31,7 +25,6 @@ type mapDispatchToPropsType = {
 }
 
 export type UsersPropsType = mapStateToPropsType & mapDispatchToPropsType
-
 
 export class UsersAPIComponent extends React.Component <UsersPropsType, {}> {
 
@@ -74,33 +67,6 @@ const mapStateToProps = (state: storeType): mapStateToPropsType => {
 
     }
 }
-
-// const mapDispatchToProps = (dispatch: Dispatch): mapDispatchToPropsType => {
-//     return {
-//         follow: (userId: number) => {
-//             dispatch(FollowAC(userId))
-//         },
-//         unfollow: (userId: number) => {
-//             dispatch(UnFollowAC(userId))
-//         },
-//         setUsers: (users: userType[]) => {
-//             dispatch(SetUsersAC(users))
-//         },
-//         setCurrentPage: (page: number) => {
-//             dispatch(SetCurrentPageAC(page))
-//         },
-//         setTotalUserCount: (totalCount: number) => {
-//             dispatch(setUserTotalCountAC(totalCount))
-//         },
-//         showLoader: (isFetching: boolean) => {
-//             dispatch(ShowLoaderAC(isFetching))
-//         },
-//         toggleFollowingProgress: (userId: number, isFetching: boolean) => {
-//             dispatch(toggleIsFollowingAC(userId, isFetching))
-//         },
-//
-//     }
-// }
 
 export const UsersContainer = connect(mapStateToProps, {
     followTC, unFollowTC, SetCurrentPageAC,

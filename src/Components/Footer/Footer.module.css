@@ -81,7 +81,7 @@
 
 .iconVK {
 
-    background-image: url('./vk.png');
+    background-image: url('../../assets/img/vk.png');
     width: 50px;
     height: 50px;
     background-repeat: no-repeat;
@@ -91,7 +91,7 @@
 }
 
 .iconVK:hover {
-    background-image: url('./vkH.png');
+    background-image: url('../../assets/img/vkH.png');
     width: 50px;
     height: 50px;
     background-repeat: no-repeat;
@@ -101,7 +101,7 @@
 }
 
 .iconFB {
-    background-image: url('./fb.png');
+    background-image: url('../../assets/img/fb.png');
     width: 50px;
     height: 50px;
     background-repeat: no-repeat;
@@ -111,7 +111,7 @@
 }
 
 .iconFB:hover {
-    background-image: url('./fbH.png');
+    background-image: url('../../assets/img/fbH.png');
     width: 50px;
     height: 50px;
     background-repeat: no-repeat;
@@ -121,7 +121,7 @@
 }
 
 .iconYT {
-    background-image: url('./yt.png');
+    background-image: url('../../assets/img/yt.png');
     width: 50px;
     height: 50px;
     background-repeat: no-repeat;
@@ -131,7 +131,7 @@
 }
 
 .iconYT:hover {
-    background-image: url('./ytH.png');
+    background-image: url('../../assets/img/ytH.png');
     width: 50px;
     height: 50px;
     background-repeat: no-repeat;
@@ -142,7 +142,7 @@
 }
 
 .iconWU {
-    background-image: url('./wu.png');
+    background-image: url('../../assets/img/wu.png');
     width: 50px;
     height: 50px;
     background-repeat: no-repeat;
@@ -152,7 +152,7 @@
 }
 
 .iconWU:hover {
-    background-image: url('./wuH.png');
+    background-image: url('../../assets/img/wuH.png');
     width: 50px;
     height: 50px;
     background-repeat: no-repeat;
@@ -162,7 +162,7 @@
 }
 
 .iconTL {
-    background-image: url('./tl.png');
+    background-image: url('../../assets/img/tl.png');
     width: 50px;
     height: 50px;
     background-repeat: no-repeat;
@@ -172,7 +172,7 @@
 }
 
 .iconTL:hover {
-    background-image: url('./tlH.png');
+    background-image: url('../../assets/img/tlH.png');
     width: 50px;
     height: 50px;
     background-repeat: no-repeat;

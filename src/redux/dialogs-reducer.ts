@@ -1,4 +1,4 @@
-import {ActionType} from "./ActionType"
+
 
 export type dialogsPropsType = {
     name: string
@@ -9,7 +9,6 @@ export type messagesPropsType = {
     id: number
     message: string
 }
-
 
 export type UpdateNewMessageBodyACType ={
     type: "UPDATE-NEW-MESSAGE-BODY",
@@ -46,7 +45,9 @@ const initialState: initialStateType ={
     newMessageBody: '',
 }
 
-export const dialogsReducer = (state: initialStateType = initialState, action: ActionType): initialStateType => {
+export type dialogsActions = UpdateNewMessageBodyACType | SendMessageACType
+
+export const dialogsReducer = (state: initialStateType = initialState, action: dialogsActions): initialStateType => {
     switch (action.type) {
         case "UPDATE-NEW-MESSAGE-BODY": {
             return {...state, newMessageBody: action.text }
@@ -64,7 +65,7 @@ export const dialogsReducer = (state: initialStateType = initialState, action: A
     }
 }
 
-// export type UpdateNewMessageBodyACType = ReturnType<typeof UpdateNewMessageBodyAC>
+
 
 export const UpdateNewMessageBodyAC = (text: string):UpdateNewMessageBodyACType => {
     return {
@@ -73,7 +74,7 @@ export const UpdateNewMessageBodyAC = (text: string):UpdateNewMessageBodyACType 
     }
 }
 
-// export type SendMessageACType = ReturnType<typeof SendMessageAC>
+
 
 export const SendMessageAC = ():SendMessageACType => {
     return {

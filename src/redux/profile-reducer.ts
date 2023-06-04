@@ -1,6 +1,6 @@
-import {ActionType} from "./ActionType"
 import {Dispatch} from "redux";
-import {usersAPI} from "../api/api";
+import {profileAPI, usersAPI} from "../api/api";
+import {AppThunk} from "../../src/redux/redux-store";
 
 
 export type PostsPropsType = {
@@ -33,6 +33,8 @@ export type ProfileType = null | {
     }
 }
 
+export type profileActions = addPostACType | updateNewPostTextACType | setUserProfileType
+
 export type InitialStateType = {
     posts: PostsPropsType[]
     newPostText: string
@@ -48,10 +50,9 @@ const initialState: InitialStateType = {
     ],
     newPostText: 'Что у вас нового?',
     profile : null
-
 }
 
-export const profileReducer = (state: InitialStateType = initialState, action: ActionType): InitialStateType => {
+export const profileReducer = (state: InitialStateType = initialState, action: profileActions): InitialStateType => {
     switch (action.type) {
         case "ADD-POST":
             const n = 4
@@ -99,9 +100,9 @@ export const setUserProfileAC = (profile: ProfileType) => {
     } as const
 }
 
-export const getUserProfileTC = (profileId: number) => {
+export const getUserProfileTC = (profileId: number): AppThunk => {
     return (dispatch:Dispatch)=>{
-        usersAPI.getProfile(+profileId)
+        profileAPI.getProfile(+profileId)
             .then(response => {
                 dispatch(setUserProfileAC(response.data))
             })

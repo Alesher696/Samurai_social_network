@@ -15,7 +15,6 @@ export const Footer = () => {
             <div>
                 <span>© 2023 Company, Inc</span>
             </div>
-
         </div>
     );
 };
